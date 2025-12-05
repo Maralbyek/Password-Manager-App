@@ -15,8 +15,27 @@ This opens a **CLI menu** that lets you:
 - Search by website  
 - Generate strong passwords  
 
-## How passwords are stored
+Brief of entire files
+password-manager/
+│
+├── backend/
+│   ├── password_manager.py
+│   ├── vault.txt        
+│   └── README.md
+│
+├── frontend/
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── index.tsx
+│   │   └── components/ 
+│   ├── package.json
+│   ├── tailwind.config.js 
+│   └── README.md
+│
+├── .gitignore
+└── README.md   
 
-Backend uses a file called:
 
 
