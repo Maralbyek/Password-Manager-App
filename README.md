@@ -20,23 +20,10 @@ Brief of entire files
 password-manager/
 │
 ├── backend/
-│   ├── password_manager.py
-│   ├── vault.txt        
-│   └── README.md
-│
-├── frontend/
-│   ├── public/
-│   │   └── index.html
-│   ├── src/
-│   │   ├── App.js
-│   │   ├── index.tsx
-│   │   └── components/ 
-│   ├── package.json
-│   ├── tailwind.config.js 
-│   └── README.md
-│
-├── .gitignore
-└── README.md   
+    ├── password_manager.py
+    ├── vault.txt        
+    └── README.md  
+
 
 
 
