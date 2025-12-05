@@ -1,3 +1,4 @@
+First ever fully functioning app of mine
 # Backend — Password Vault (Python)
 
 This backend handles password storage and encryption.  
@@ -36,6 +37,7 @@ password-manager/
 │
 ├── .gitignore
 └── README.md   
+
 
 
 
