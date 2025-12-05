@@ -52,7 +52,7 @@ export default function PasswordManager() {
       await window.storage.set(`pwd:${id}`, JSON.stringify(pwd));
       await loadPasswords();
       setNewPassword({ site: '', username: '', password: '' });
-      showNotification('Password saved successfully! ✨');
+      showNotification('Password saved successfully! ');
       setView('menu');
     } catch (error) {
       showNotification('Error saving password');
@@ -66,13 +66,13 @@ export default function PasswordManager() {
       pwd += chars.charAt(Math.floor(Math.random() * chars.length));
     }
     setNewPassword({ ...newPassword, password: pwd });
-    showNotification('Password generated! ✨');
+    showNotification('Password generated! ');
   };
 
   const copyToClipboard = (text, id) => {
     navigator.clipboard.writeText(text);
     setCopiedId(id);
-    showNotification('Copied to clipboard! 📋');
+    showNotification('Copied to clipboard! ');
     setTimeout(() => setCopiedId(null), 2000);
   };
 
@@ -88,14 +88,12 @@ export default function PasswordManager() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 p-8">
       <div className="max-w-4xl mx-auto">
-        {/* Notification */}
         {notification && (
           <div className="fixed top-8 right-8 bg-white/90 backdrop-blur-lg rounded-2xl shadow-lg px-6 py-4 animate-pulse border-2 border-purple-200 z-50">
             <p className="text-purple-600 font-medium">{notification}</p>
           </div>
         )}
 
-        {/* Header */}
         <div className="text-center mb-12 animate-fade-in">
           <div className="inline-block relative mb-4">
             <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full blur-xl opacity-50 animate-pulse"></div>
@@ -104,10 +102,9 @@ export default function PasswordManager() {
           <h1 className="text-5xl font-bold bg-gradient-to-r from-purple-600 via-pink-500 to-blue-500 bg-clip-text text-transparent mb-2">
             Password Vault
           </h1>
-          <p className="text-gray-600">Your secrets, safely stored ✨</p>
+          <p className="text-gray-600">Your secrets, safely stored </p>
         </div>
 
-        {/* Main Menu */}
         {view === 'menu' && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <MenuCard
@@ -141,7 +138,6 @@ export default function PasswordManager() {
           </div>
         )}
 
-        {/* Add Password View */}
         {view === 'add' && (
           <div className="bg-white/60 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border-2 border-purple-200">
             <h2 className="text-3xl font-bold text-purple-600 mb-6 flex items-center gap-3">
@@ -188,7 +184,6 @@ export default function PasswordManager() {
           </div>
         )}
 
-        {/* View Passwords */}
         {view === 'view' && (
           <div className="bg-white/60 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border-2 border-purple-200">
             <div className="flex justify-between items-center mb-6">
@@ -228,7 +223,6 @@ export default function PasswordManager() {
           </div>
         )}
 
-        {/* Search View */}
         {view === 'search' && (
           <div className="bg-white/60 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border-2 border-purple-200">
             <h2 className="text-3xl font-bold text-purple-600 mb-6 flex items-center gap-3">
@@ -266,7 +260,6 @@ export default function PasswordManager() {
           </div>
         )}
 
-        {/* Generate Password View */}
         {view === 'generate' && (
           <div className="bg-white/60 backdrop-blur-lg rounded-3xl shadow-2xl p-8 border-2 border-purple-200">
             <h2 className="text-3xl font-bold text-purple-600 mb-6 flex items-center gap-3">
@@ -294,7 +287,7 @@ export default function PasswordManager() {
                 onClick={generatePassword}
                 className="w-full bg-gradient-to-r from-purple-500 to-pink-500 text-white py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all hover:scale-105"
               >
-                Generate Password ✨
+                Generate Password 
               </button>
               {newPassword.password && (
                 <button
@@ -360,4 +353,5 @@ function PasswordCard({ password, showPassword, onCopy, copiedId }) {
       </div>
     </div>
   );
+
 }
