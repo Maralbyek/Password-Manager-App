@@ -5,11 +5,168 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#9333ea" />
     <meta name="description" content="Password Manager - Your secrets, safely stored" />
-    <title>Password Vault </title>
+    <meta name="author" content="Password Vault" />
+    <meta name="keywords" content="password manager, secure passwords, vault, encryption" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%239333ea%22><rect x=%227%22 y=%229%22 width=%2210%22 height=%227%22 rx=%221%22/><path d=%22M8 9V7a4 4 0 0 1 8 0v2%22 fill=%22none%22 stroke=%22%239333ea%22 stroke-width=%222%22/></svg>" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Password Vault" />
+    <meta property="og:description" content="Your secrets, safely stored" />
+    <meta property="og:type" content="website" />
+    
+    <title>Password Vault</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom Tailwind Config -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#9333ea',
+              secondary: '#ec4899',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-in',
+              'slide-up': 'slideUp 0.4s ease-out',
+              'glow': 'glow 2s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              glow: {
+                '0%, 100%': { boxShadow: '0 0 20px rgba(147, 51, 234, 0.3)' },
+                '50%': { boxShadow: '0 0 40px rgba(147, 51, 234, 0.6)' },
+              },
+            },
+          },
+        },
+      }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        overflow-x: hidden;
+      }
+      
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      
+      ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+      }
+      
+      ::-webkit-scrollbar-thumb {
+        background: linear-gradient(to bottom, #9333ea, #ec4899);
+        border-radius: 10px;
+      }
+      
+      ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(to bottom, #7e22ce, #db2777);
+      }
+      
+      /* Loading animation */
+      .loader {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #9333ea;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      /* Disable text selection on buttons */
+      button {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      
+      /* Focus styles for accessibility */
+      *:focus-visible {
+        outline: 2px solid #9333ea;
+        outline-offset: 2px;
+      }
+      
+      /* Smooth transitions */
+      * {
+        transition: all 0.2s ease;
+      }
+      
+      /* No script message styling */
+      noscript {
+        display: block;
+        padding: 20px;
+        background: #fee2e2;
+        color: #991b1b;
+        text-align: center;
+        font-weight: 600;
+      }
+      
+      /* Gradient background animation */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #faf5ff 0%, #fce7f3 50%, #eff6ff 100%);
+        z-index: -1;
+      }
+    </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <!-- No JavaScript Warning -->
+    <noscript>
+      <div style="position: fixed; top: 0; left: 0; right: 0; z-index: 9999; padding: 20px; background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); color: #991b1b; text-align: center; font-weight: 600; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        JavaScript is required to run this application. Please enable JavaScript in your browser settings.
+      </div>
+    </noscript>
+    
+    <!-- Root Container -->
+    <div id="root">
+      <!-- Loading State -->
+      <div style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
+        <div style="text-align: center;">
+          <div class="loader" style="margin: 0 auto 20px;"></div>
+          <p style="color: #9333ea; font-size: 18px; font-weight: 600;">Loading Password Vault...</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
   </body>
 </html>
