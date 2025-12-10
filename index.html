@@ -8,20 +8,16 @@
     <meta name="author" content="Password Vault" />
     <meta name="keywords" content="password manager, secure passwords, vault, encryption" />
     
-    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%239333ea%22><rect x=%227%22 y=%229%22 width=%2210%22 height=%227%22 rx=%221%22/><path d=%22M8 9V7a4 4 0 0 1 8 0v2%22 fill=%22none%22 stroke=%22%239333ea%22 stroke-width=%222%22/></svg>" />
     
-    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Password Vault" />
     <meta property="og:description" content="Your secrets, safely stored" />
     <meta property="og:type" content="website" />
     
     <title>Password Vault</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Custom Tailwind Config -->
     <script>
       tailwind.config = {
         theme: {
@@ -54,7 +50,6 @@
       }
     </script>
     
-    <!-- Custom Styles -->
     <style>
       * {
         margin: 0;
@@ -71,7 +66,6 @@
         overflow-x: hidden;
       }
       
-      /* Custom scrollbar */
       ::-webkit-scrollbar {
         width: 10px;
       }
@@ -90,7 +84,6 @@
         background: linear-gradient(to bottom, #7e22ce, #db2777);
       }
       
-      /* Loading animation */
       .loader {
         border: 4px solid #f3f3f3;
         border-top: 4px solid #9333ea;
@@ -105,7 +98,6 @@
         100% { transform: rotate(360deg); }
       }
       
-      /* Disable text selection on buttons */
       button {
         -webkit-user-select: none;
         -moz-user-select: none;
@@ -113,18 +105,16 @@
         user-select: none;
       }
       
-      /* Focus styles for accessibility */
+
       *:focus-visible {
         outline: 2px solid #9333ea;
         outline-offset: 2px;
       }
       
-      /* Smooth transitions */
       * {
         transition: all 0.2s ease;
       }
-      
-      /* No script message styling */
+
       noscript {
         display: block;
         padding: 20px;
@@ -133,8 +123,7 @@
         text-align: center;
         font-weight: 600;
       }
-      
-      /* Gradient background animation */
+
       body::before {
         content: '';
         position: fixed;
@@ -148,16 +137,14 @@
     </style>
   </head>
   <body>
-    <!-- No JavaScript Warning -->
     <noscript>
       <div style="position: fixed; top: 0; left: 0; right: 0; z-index: 9999; padding: 20px; background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%); color: #991b1b; text-align: center; font-weight: 600; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
         JavaScript is required to run this application. Please enable JavaScript in your browser settings.
       </div>
     </noscript>
     
-    <!-- Root Container -->
+
     <div id="root">
-      <!-- Loading State -->
       <div style="display: flex; justify-content: center; align-items: center; min-height: 100vh;">
         <div style="text-align: center;">
           <div class="loader" style="margin: 0 auto 20px;"></div>
@@ -166,7 +153,7 @@
       </div>
     </div>
     
-    <!-- Preload Critical Resources -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com" />
   </body>
 </html>
+
