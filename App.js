@@ -9,7 +9,6 @@ export default function PasswordManager() {
   const [copiedId, setCopiedId] = useState(null);
   const [notification, setNotification] = useState('');
 
-  // Form states
   const [newPassword, setNewPassword] = useState({
     site: '',
     username: '',
@@ -355,3 +354,4 @@ function PasswordCard({ password, showPassword, onCopy, copiedId }) {
   );
 
 }
+
